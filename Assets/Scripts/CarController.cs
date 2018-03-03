@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CarController : MonoBehaviour {
-	public float moveSpeed = -5f;
+	public float moveSpeed = -8f;
 	private float yOrigin;
 	private float timer = 0;
 	Rigidbody2D rb2d;
@@ -20,10 +20,10 @@ public class CarController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		timer += 5 * Time.fixedDeltaTime;
+		timer += 10 * Time.fixedDeltaTime;
 		rb2d.MovePosition(new Vector2(
 			rb2d.position.x + moveSpeed * Time.fixedDeltaTime,
-			yOrigin + 0.07f * Mathf.Sin(timer)
+			yOrigin + 0.1f * Mathf.Sin(timer) // bounce the car
 		));
 	}
 }
