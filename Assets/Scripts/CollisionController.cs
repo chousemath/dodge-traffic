@@ -4,15 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CollisionController : MonoBehaviour {
-
-	// Use this for initialization
 	void Start () {
-		Debug.Log("Collision Controller Activated");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		GameObject spawnManager = GameObject.Find("SpawnManager");
+		TimeManager timeManager = spawnManager.GetComponent<TimeManager>();
 	}
 
 	void OnCollisionEnter2D (Collision2D coll) {

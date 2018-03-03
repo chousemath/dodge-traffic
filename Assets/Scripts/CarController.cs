@@ -14,10 +14,6 @@ public class CarController : MonoBehaviour {
 		yOrigin = rb2d.position.y;
 		gameObject.GetComponent<Renderer>().material.color = Color.red;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
 
 	void FixedUpdate () {
 		timer += 10 * Time.fixedDeltaTime;
