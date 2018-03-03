@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour {
 	public Text timeText;
@@ -14,6 +15,10 @@ public class TimeManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeNum -= Time.fixedDeltaTime;
-		timeText.text = timeNum.ToString("F2");
+		if (timeNum <= 0) {
+			SceneManager.LoadScene("GameFailure");
+		} else {
+			timeText.text = timeNum.ToString("F2");
+		}
 	}
 }
